@@ -18,6 +18,27 @@ Welcome to the Alaska Center for Energy and Power (ACEP) ASAPSW Data Pipeline re
 
 This design ensures a seamless, event-driven flow where each component is triggered based on specific conditions, ensuring efficient and timely processing. The original `.tar.gz` archive remains untouched in the initial bucket, serving as an immutable record, while the unpacked contents are made available for further processing in the secondary bucket.
 
+
+## ETL Processing & BigQuery Storage:
+
+1. **BigQuery Ingestion**:
+    - Once the unpacked data is stored in the secondary GCP bucket, a Cloud Function is triggered.
+    - This function initiates an Extract, Transform, and Load (ETL) job that ingests the unpacked data into a BigQuery table.
+
+2. **Initial Data Validation**:
+    - As the data is ingested into BigQuery, a set of validation rules are applied to ensure data consistency and quality.
+    - Any records that don't meet the predefined standards are logged for further analysis and correction.
+
+3. **Data Reshaping & Cleaning**:
+    - Post initial validation, a separate job runs to reshape the data for optimal querying. This includes operations like normalization, deduplication, and data type casting.
+    - Additionally, known data quality issues, if any, are addressed, ensuring that the final stored data is clean and reliable.
+
+4. **Completion Notification**:
+    - After the cleaning and reshaping tasks are complete, a message is broadcast via Pub/Sub. This message signals that the data is ready for analytical processes and visualization generation.
+
+This segment of the pipeline is focused on ensuring that the data is not only stored but is also in an optimal format for any downstream analytical tasks. By using BigQuery, the system takes advantage of its scalable storage and fast querying capabilities, while also ensuring that the data is reliable and of high quality.
+
+
 ---
 
 ### Core Repositories:
