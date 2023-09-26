@@ -1,8 +1,6 @@
-# sw-stack
+# ACEP SW Data Pipeline Overview: GCP Bucket Event-Driven Processing For Archiving, On Line Analytical Processing, And Data Visualization.
 
-# ACEP SW Data Pipeline Overview: GCP Bucket Event-Driven Processing For Archiving, On Line Analytical Processing, And Data Visulization.
-
-Welcome to the Alaska Center for Energy and Power (ACEP) ASAPSW Data Pipeline repository. This repository centralizes documentation and links for a series of interconnected Google Cloud Platform (GCP) components designed to automate and streamline the processing of `.tar.gz` archives arriving in a designated GCP bucket.
+Welcome to the Alaska Center for Energy and Power (ACEP) ASAPSW Data Pipeline repository. This repository centralizes documentation and links for a series of interconnected Google Cloud Platform (GCP) components designed to automate and streamline the processing of `.tar.gz` archives arriving in a designated GCP bucket. Beyond the initial processing, this pipeline system offers capabilities for archival storage, advanced data wrangling to shape and transform the data, and the automated generation of visualizations to offer immediate insights from the ingested data.
 
 ## Workflow Overview:
 
