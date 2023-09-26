@@ -38,6 +38,26 @@ This design ensures a seamless, event-driven flow where each component is trigge
 
 This segment of the pipeline is focused on ensuring that the data is not only stored but is also in an optimal format for any downstream analytical tasks. By using BigQuery, the system takes advantage of its scalable storage and fast querying capabilities, while also ensuring that the data is reliable and of high quality.
 
+## Data Visualization & Grafana Integration:
+
+1. **Dashboard Template Retrieval**:
+    - Once data is cleaned and reshaped in BigQuery, a trigger is set off to fetch a predefined dashboard template.
+    - This template contains placeholders for the most recent data and metrics deemed critical for monitoring.
+
+2. **Dashboard Population**:
+    - The template is populated with the most recent data from BigQuery.
+    - Using automated scripts, the required metrics are extracted, and the template is filled accordingly, producing a live dashboard reflecting the latest data trends.
+
+3. **Grafana VPC Integration**:
+    - With the dashboard ready, it's pushed to Grafana through a secure VPC (Virtual Private Cloud) connection.
+    - This ensures that the data remains secure, and the visualization is only accessible to authorized personnel.
+
+4. **Completion & Accessibility**:
+    - Post integration, a notification is sent to the relevant stakeholders informing them of the updated dashboard.
+    - They can now access the latest visualizations on Grafana, providing them with real-time insights derived from the freshly processed data.
+
+This stage of the pipeline emphasizes the importance of real-time data visualization. By automating the process from data processing in BigQuery to visualization in Grafana, stakeholders can receive up-to-date insights with minimal delay, aiding in informed decision-making.
+
 
 ---
 
