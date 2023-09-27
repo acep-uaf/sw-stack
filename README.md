@@ -1,10 +1,16 @@
 # ACEP SW Data Pipeline Overview: GCP Bucket Event-Driven Processing For Archiving, On Line Analytical Processing, And Data Visualization.
 
-Welcome to the Alaska Center for Energy and Power (ACEP) ASAPSW Data Pipeline repository. This repository centralizes documentation and links for a series of interconnected Google Cloud Platform (GCP) components designed to automate and streamline the processing of `.tar.gz` archives arriving in a designated GCP bucket. Beyond the initial processing, this pipeline system offers capabilities for archival storage, advanced data wrangling to shape and transform the data, and the automated generation of visualizations to offer immediate insights from the ingested data.
+Welcome to the Alaska Center for Energy and Power (ACEP) SW Data Pipeline repository. This repository centralizes documentation and links for a series of interconnected Google Cloud Platform (GCP) components designed to automate and streamline the processing of `.tar.gz` archives arriving in a designated GCP bucket. Beyond the initial processing, this pipeline system offers capabilities for archival storage, advanced data wrangling to shape, clean and transform the data, and the automated generation of visualizations to offer immediate insights from the ingested data.
 
-![SW Reference Diagram](diagrams/sw_reference_diagram.png)
+<br>
+
+![SW Reference Diagram](diagrams/sw_reference_diagrams.png)
+
+<br>
 
 ## Workflow Overview:
+
+<br>
 
 ## Archiving
 
@@ -22,6 +28,7 @@ Welcome to the Alaska Center for Energy and Power (ACEP) ASAPSW Data Pipeline re
 
 This design ensures a seamless, event-driven flow where each component is triggered based on specific conditions, ensuring efficient and timely processing. The original `.tar.gz` archive remains untouched in the initial bucket, serving as an immutable record, while the unpacked contents are made available for further processing in the secondary bucket.
 
+<br>
 
 ## ETL Processing & BigQuery Storage:
 
@@ -41,6 +48,8 @@ This design ensures a seamless, event-driven flow where each component is trigge
     - After the cleaning and reshaping tasks are complete, a message is broadcast via Pub/Sub. This message signals that the data is ready for analytical processes and visualization generation.
 
 This segment of the pipeline is focused on ensuring that the data is not only stored but is also in an optimal format for any downstream analytical tasks. By using BigQuery, the system takes advantage of its scalable storage and fast querying capabilities, while also ensuring that the data is reliable and of high quality.
+
+<br>
 
 ## Data Visualization & Grafana Integration:
 
