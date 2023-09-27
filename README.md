@@ -2,7 +2,11 @@
 
 Welcome to the Alaska Center for Energy and Power (ACEP) ASAPSW Data Pipeline repository. This repository centralizes documentation and links for a series of interconnected Google Cloud Platform (GCP) components designed to automate and streamline the processing of `.tar.gz` archives arriving in a designated GCP bucket. Beyond the initial processing, this pipeline system offers capabilities for archival storage, advanced data wrangling to shape and transform the data, and the automated generation of visualizations to offer immediate insights from the ingested data.
 
+![SW Reference Diagram](diagrams/sw_reference_diagram.png)
+
 ## Workflow Overview:
+
+## Archiving
 
 1. **Archive Arrival & Notification**:
     - A `.tar.gz` archive is uploaded to a specific GCP bucket.
@@ -62,11 +66,6 @@ This stage of the pipeline emphasizes the importance of real-time data visualiza
 ---
 
 ### Core Repositories:
-
-(You can now list the core repositories here, providing specific details about which component they represent in the workflow.)
-
-
-## Repositories
 
 1. [sw-cf-bq-gr-dash-gen](https://github.com/acep-uaf/sw-cf-bq-gr-dash-gen)
 2. [sw-cf-bq-gr-dash-load](https://github.com/acep-uaf/sw-cf-bq-gr-dash-load)
