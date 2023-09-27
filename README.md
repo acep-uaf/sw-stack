@@ -16,7 +16,7 @@ Welcome to the Alaska Center for Energy and Power (ACEP) SW Data Pipeline reposi
 
 1. **Archive Arrival & Notification**:
     - A `.tar.gz` archive is uploaded to a specific GCP bucket.
-    - A Cloud Function watches this bucket. Upon the arrival of a `.tar.gz` file, it broadcasts a message via Eventarc to Pub/Sub.
+    - A [Cloud Function](https://github.com/acep-uaf/sw-cf-gcs-untar) watches this bucket. Upon the arrival of a `.tar.gz` file, it broadcasts a message via Eventarc to Pub/Sub.
 
 2. **Data Flow Extraction**:
     - A Dataflow job, which is subscribed to the Pub/Sub topic, triggers upon receiving the message. 
@@ -76,9 +76,9 @@ This stage of the pipeline emphasizes the importance of real-time data visualiza
 
 ### Core Repositories:
 
-1. [sw-cf-bq-gr-dash-gen](https://github.com/acep-uaf/sw-cf-bq-gr-dash-gen)
-2. [sw-cf-bq-gr-dash-load](https://github.com/acep-uaf/sw-cf-bq-gr-dash-load)
-3. [sw-cf-gcs-untar](https://github.com/acep-uaf/sw-cf-gcs-untar)
-4. [sw-cf-gcs-ps-bq](https://github.com/acep-uaf/sw-cf-gcs-ps-bq)
-5. [sw-cf-bq-pp](https://github.com/acep-uaf/sw-cf-bq-pp)
-6. [sw-df-untar-gcs](https://github.com/acep-uaf/sw-df-untar-gcs)
+1. [sw-cf-gcs-untar](https://github.com/acep-uaf/sw-cf-gcs-untar)
+2. [sw-df-untar-gcs](https://github.com/acep-uaf/sw-df-untar-gcs)
+3. [sw-cf-gcs-ps-bq](https://github.com/acep-uaf/sw-cf-gcs-ps-bq)
+4. [sw-cf-bq-pp](https://github.com/acep-uaf/sw-cf-bq-pp)
+5. [sw-cf-bq-gr-dash-gen](https://github.com/acep-uaf/sw-cf-bq-gr-dash-gen)
+6. [sw-cf-bq-gr-dash-load](https://github.com/acep-uaf/sw-cf-bq-gr-dash-load)
