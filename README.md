@@ -72,6 +72,10 @@ This segment of the pipeline is focused on ensuring that the data is not only st
 
 This stage of the pipeline emphasizes the importance of real-time data visualization. By automating the process from data processing in BigQuery to visualization in Grafana, stakeholders can receive up-to-date insights with minimal delay, aiding in informed decision-making.
 
+<br>
+
+![dash example](diagrams/ei_dash.png)
+
 
 ---
 
