@@ -74,7 +74,7 @@ This stage of the pipeline emphasizes the importance of real-time data visualiza
 
 <br>
 
-![dash example](diagrams/ei_dash.png)
+![dash example](/diagrams/ei_dash.png)
 
 
 ---
